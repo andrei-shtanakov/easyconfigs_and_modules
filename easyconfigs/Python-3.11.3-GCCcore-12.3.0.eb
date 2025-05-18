@@ -1,0 +1,10 @@
+easyblock = 'EB_Python'
+
+name = 'Python'
+version = '3.11.3'
+
+homepage = 'https://python.org/'
+description = """Python is a programming language that lets you work more quickly and integrate your systems
+more effectively."""
+
+toolchain = {'name': 'GCCcore', 'version': '12.3.0'}
