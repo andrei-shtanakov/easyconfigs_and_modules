@@ -173,11 +173,17 @@ def main():
     # Write results to files
     with open('ext_eb_repo.txt', 'w') as f:
         for item in sorted(eb_files_without_modules):
-            f.write(f"{item}\n")
+            f.write(f"{item}.eb\n")
     
     with open('ext_modules.txt', 'w') as f:
         for item in sorted(modules_without_eb_files):
-            f.write(f"{item}\n")
+            # Convert the first '-' back to '/' for module names
+            parts = item.split('-', 1)
+            if len(parts) > 1:
+                module_name_with_slash = parts[0] + '/' + parts[1]
+                f.write(f"{module_name_with_slash}\n")
+            else:
+                f.write(f"{item}\n")
     
     # Summary report
     print("\nSummary:")
